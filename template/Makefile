@@ -16,7 +16,7 @@ solution_fast: solution.cpp
 	$(CC) $(CPP_FLAGS) $(OPT_FLAGS) solution.cpp -o solution_fast
 
 clean:
-	@echo " Cleaning..."; rm solution solution_fast
+	@echo " Cleaning..."; rm solution solution_fast 2> /dev/null || true
 
 all: solution_fast solution
 
