@@ -1,0 +1,26 @@
+
+// Just load line and process chars
+    std::fstream myfile(n, std::ios_base::in);
+    std::string line;
+
+    while (std::getline(myfile, line)){
+        for (auto ch : line){
+        }
+    }
+    myfile.close();
+
+// Load lines, and then split lines and process
+    std::fstream myfile("input", std::ios_base::in);
+
+    std::string line;
+    std::string word;
+    std::stringstream line_stream;
+    while (std::getline(myfile, line)){
+        line_stream = std::stringstream(line);
+        while(std::getline(line_stream, word, ',')){
+            // Loop through line
+        }
+
+    }
+    myfile.close();
+
