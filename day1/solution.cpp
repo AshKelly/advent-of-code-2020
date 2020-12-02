@@ -23,7 +23,7 @@ int main (int argc, char *argv[]){
     }
     myfile.close();
 
-    // part1
+    // Part 1
     for(long unsigned int i=0; i<numbers.size(); i++)
         for(long unsigned int j=i+1; j<numbers.size(); j++)
             if (numbers[i]+numbers[j] == 2020){
@@ -31,7 +31,7 @@ int main (int argc, char *argv[]){
                 break;
             }
 
-    //part2
+    // Part 2
     for(long unsigned int i=0; i<numbers.size(); i++)
         for(long unsigned int j=i+1; j<numbers.size(); j++)
             for(long unsigned int k=j+1; k<numbers.size(); k++)
