@@ -1,0 +1,10 @@
+---
+Language:        Cpp
+BasedOnStyle:  LLVM
+TabWidth:        4
+UseTab:          Never
+IndentWidth: 4
+AllowShortFunctionsOnASingleLine: None
+KeepEmptyLinesAtTheStartOfBlocks: false
+...
+

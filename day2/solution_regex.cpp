@@ -4,33 +4,22 @@
 #include <sstream>
 #include <string>
 
-#include <list>
-#include <map>
-#include <set>
-#include <vector>
-
-#include <algorithm>
-#include <iterator>
+#include <regex>
 
 int main(int argc, char *argv[]) {
     int ans1 = 0, ans2 = 0;
 
+    std::regex pieces_regex("(\\d+)-(\\d+) ([a-z]): ([a-z]+)");
+
     std::fstream myfile("input", std::ios_base::in);
     std::string line;
+    std::smatch pieces_match;
     while (std::getline(myfile, line)) {
-        // 1-3 a: abcde
-        int dash = line.find("-");
-        int space = line.find(" ") + 1;
-        int colon = line.find(":") + 2;
-
-        std::string token1 = line.substr(0, dash);
-        std::string token2 = line.substr(dash + 1, space - dash);
-        std::string token3 = line.substr(space, 1);
-        std::string token4 = line.substr(colon, line.size() - colon);
-
-        int r1 = std::stoi(token1);
-        int r2 = std::stoi(token2);
-        char target = token3[0];
+        std::regex_search(line, pieces_match, pieces_regex);
+        int r1 = std::stoi(pieces_match[1]);
+        int r2 = std::stoi(pieces_match[2]);
+        char target = std::string(pieces_match[3])[0];
+        std::string token4 = pieces_match[4];
 
         int tot = 0;
         for (unsigned long int i = 0; i < token4.size(); i++)
