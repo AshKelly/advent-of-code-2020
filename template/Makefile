@@ -3,7 +3,7 @@ DEBUG_FLAGS = -g -pedantic -Wall -Wextra -Wcast-align -Wcast-qual \
 			  -Winit-self -Wlogical-op  -Wmissing-include-dirs -Wnoexcept \
 			  -Wold-style-cast -Woverloaded-virtual -Wredundant-decls \
 			  -Wshadow -Wsign-promo -Wstrict-null-sentinel \
-			  -Wstrict-overflow=5 -Wswitch-default -Wundef -Werror -Wno-unused
+			  -Wswitch-default -Wundef -Wno-unused
 
 OPT_FLAGS = -O3
 CC = g++
