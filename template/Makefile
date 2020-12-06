@@ -1,13 +1,18 @@
-DEBUG_FLAGS = -g -pedantic -Wall -Wextra -Wcast-align -Wcast-qual \
+DEBUG_FLAGS = -O0 -Werror -Wall -Wextra -pedantic -Wcast-align -Wcast-qual \
 			  -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 \
-			  -Winit-self -Wlogical-op  -Wmissing-include-dirs -Wnoexcept \
+			  -Winit-self -Wlogical-op -Wmissing-include-dirs -Wnoexcept \
 			  -Wold-style-cast -Woverloaded-virtual -Wredundant-decls \
 			  -Wshadow -Wsign-promo -Wstrict-null-sentinel \
-			  -Wswitch-default -Wundef -Wno-unused
+			  -Wstrict-overflow=5 -Wundef -Wno-unused -Wno-variadic-macros \
+			  -Wno-parentheses -fdiagnostics-show-option
 
 OPT_FLAGS = -O3
 CC = g++
 CPP_FLAGS = -std=c++14
+.DEFAULT_GOAL := all
+
+default:
+	@echo default all
 
 solution: solution.cpp
 	$(CC) $(CPP_FLAGS) $(DEBUG_FLAGS) solution.cpp -o solution
