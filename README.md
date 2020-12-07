@@ -32,4 +32,7 @@ Regardless of the outcome of these questions, I then ask a final question:
 |    2    |  Password Philosophy                          | [Blog](https://www.ashkelly.co.uk/blog/aoc20d2/)
 |    3    |  Toboggan Trajectory                          | [Blog](https://www.ashkelly.co.uk/blog/aoc20d3/)
 |    4    |  Passport Processing                          | [Blog](https://www.ashkelly.co.uk/blog/aoc20d4/)
+|    5    |  Binary Boarding                              | [Blog](https://www.ashkelly.co.uk/blog/aoc20d5/)
+|    6    |  Custom Customs                               | [Blog](https://www.ashkelly.co.uk/blog/aoc20d6/)
+|    7    |  Handy Haversacks                             | [Blog](https://www.ashkelly.co.uk/blog/aoc20d7/)
 
