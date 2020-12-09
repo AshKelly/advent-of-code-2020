@@ -35,4 +35,6 @@ Regardless of the outcome of these questions, I then ask a final question:
 |    5    |  Binary Boarding                              | [Blog](https://www.ashkelly.co.uk/blog/aoc20d5/)
 |    6    |  Custom Customs                               | [Blog](https://www.ashkelly.co.uk/blog/aoc20d6/)
 |    7    |  Handy Haversacks                             | [Blog](https://www.ashkelly.co.uk/blog/aoc20d7/)
+|    8    |  Handheld Halting                             | [Blog](https://www.ashkelly.co.uk/blog/aoc20d8/)
+|    9    |  Encoding Error                               | [Blog](https://www.ashkelly.co.uk/blog/aoc20d9/)
 
