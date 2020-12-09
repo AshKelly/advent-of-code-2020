@@ -15,10 +15,10 @@ default:
 	@echo default all
 
 solution: solution.cpp
-	$(CC) $(CPP_FLAGS) $(DEBUG_FLAGS) solution.cpp -o solution
+	$(CC) $(CPP_FLAGS) $(DEBUG_FLAGS) solution_optimal.cpp -o solution
 
 solution_fast: solution.cpp
-	$(CC) $(CPP_FLAGS) $(OPT_FLAGS) solution.cpp -o solution_fast
+	$(CC) $(CPP_FLAGS) $(OPT_FLAGS) solution_optimal.cpp -o solution_fast
 
 clean:
 	@echo " Cleaning..."; rm solution solution_fast 2> /dev/null || true
