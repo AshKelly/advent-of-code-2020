@@ -6,23 +6,16 @@ DEBUG_FLAGS = -O0 -Wall -Wextra -pedantic -Wcast-align -Wcast-qual \
 			  -Wstrict-overflow=5 -Wundef -Wno-unused -Wno-variadic-macros \
 			  -Wno-parentheses -fdiagnostics-show-option
 
-OPT_FLAGS = -O3
 CC = g++
 CPP_FLAGS = -std=c++11
-.DEFAULT_GOAL := solution
+.DEFAULT_GOAL := stdlib
 
 default:
-	@echo default solution
+	@echo default stdlib
 
-solution: solution.cpp
-	$(CC) $(CPP_FLAGS) $(DEBUG_FLAGS) solution.cpp -o solution
+stdlib: aoc.h
+	$(CC) $(CPP_FLAGS) $(DEBUG_FLAGS) aoc.h
 
-solution_opt: solution.cpp
-	$(CC) $(CPP_FLAGS) $(OPT_FLAGS) solution.cpp -o solution_opt
-
-clean:
-	@echo " Cleaning..."; rm solution solution_fast 2> /dev/null || true
-
-all: solution_opt solution
+all: stdlib
 
 .PHONY: clean

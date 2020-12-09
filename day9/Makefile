@@ -8,11 +8,11 @@ DEBUG_FLAGS = -O0 -Wall -Wextra -pedantic -Wcast-align -Wcast-qual \
 
 OPT_FLAGS = -O3
 CC = g++
-CPP_FLAGS = -std=c++14
-.DEFAULT_GOAL := all
+CPP_FLAGS = -std=c++11
+.DEFAULT_GOAL := solution
 
 default:
-	@echo default all
+	@echo default solution
 
 solution: solution.cpp
 	$(CC) $(CPP_FLAGS) $(DEBUG_FLAGS) solution.cpp -o solution
