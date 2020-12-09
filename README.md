@@ -24,6 +24,14 @@ Regardless of the outcome of these questions, I then ask a final question:
     Did I implement the algorithm in an efficient and readable way?
 
 
+# Running the code
+
+First of all, enter the lib directory and run `make`. This just pre-compiles the
+standard library headers, and pushes compilation time down.
+
+You can then run `make` in any of the day folders to compile the solution. The
+solution will compile without pre-compiling the headers.
+
 # Calendar
 
 |   Day   | Title                                         | Write up
