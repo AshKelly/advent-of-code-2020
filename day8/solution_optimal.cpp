@@ -51,8 +51,8 @@ int computer2(
         }
 
         // We've probably found an inf loop, let's break
+        if (visited[i] > 0) return -1;
         visited[i] += 1;
-        if (visited[i] > 1) return -1;
 
         if (instructions[i].first == "nop"){
             i++;
@@ -89,20 +89,39 @@ int main (int argc, char *argv[]){
     int i = 0;
     while(i < instructions.size()){
         ans2 == 0;
+        // Try flipping the instruction
         if (instructions[i].first == "jmp"){
             ans2 = computer2(instructions, visited, i+1);
         }
-        if (instructions[i].first == "nop"){
+        else if (instructions[i].first == "nop"){
             ans2 = computer2(instructions, visited, i+instructions[i].second);
         }
-        if (ans2 == 1) break;
-
+        // Mark instruction as visited
         visited[i]++;
+        // Have we found the good path?
+        if (ans2 == 1) break;
+        // Continue as if the instruction wasn't flipped
         if (instructions[i].first == "jmp")
             i += instructions[i].second;
         else
             i++;
     }
+
+    /*
+    int jmp_nop = 0;
+    for(auto v : instructions)
+        if (v.first != "acc")
+            jmp_nop+=1;
+    std::cout << jmp_nop << std::endl;
+
+    int tot = 0;
+    for(auto v : visited){
+        tot += v;
+    }
+    std::cout << tot << std::endl;
+    std::cout << visited.size() << std::endl;
+    std::cout << i << std::endl;
+    */
 
     // Fix instruction
     if (instructions[i].first == "jmp")
