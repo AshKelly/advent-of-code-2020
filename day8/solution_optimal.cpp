@@ -1,16 +1,9 @@
-#include <fstream>
-#include <iostream>
-
-#include <string>
-
-#include <vector>
-
-#include <regex>
+#include "../lib/aoc.h"
 
 int computer1(std::vector<std::pair<std::string, int>> &instructions) {
     std::vector<int> visited(instructions.size());
     int acc = 0;
-    int i = 0;
+    size_t i = 0;
     while (true) {
         if (i == instructions.size())
             return acc;
@@ -32,7 +25,7 @@ int computer1(std::vector<std::pair<std::string, int>> &instructions) {
 }
 
 int computer2(std::vector<std::pair<std::string, int>> &instructions,
-              std::vector<int> &visited, int i) {
+              std::vector<int> &visited, size_t i) {
     while (true) {
         if (i == instructions.size())
             return 1;
@@ -77,7 +70,7 @@ int main(int argc, char *argv[]) {
     // We must loop through and find the change in instruction that produces
     // the correct code
     std::vector<int> visited(instructions.size());
-    int i = 0;
+    size_t i = 0;
     while (i < instructions.size()) {
         ans2 == 0;
         // Try flipping the instruction

@@ -1,17 +1,4 @@
-#include <fstream>
-#include <iostream>
-
-#include <sstream>
-#include <string>
-
-#include <list>
-#include <map>
-#include <set>
-#include <vector>
-
-#include <algorithm>
-#include <iterator>
-#include <regex>
+#include "../lib/aoc.h"
 
 int computer1(std::vector<std::pair<std::string, int>> &instructions) {
     std::vector<int> visited(instructions.size());

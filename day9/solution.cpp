@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[]) {
     long int ans1 = 0, ans2 = 0;
-    int preamble_max_size = 25;
+    size_t preamble_max_size = 25;
 
     std::fstream myfile("input", std::ios_base::in);
     std::string line;
