@@ -1,17 +1,4 @@
-#include <iostream>
-#include <fstream>
-
-#include <string>
-#include <sstream>
-
-#include <vector>
-#include <map>
-#include <set>
-#include <list>
-
-#include <algorithm>
-#include <iterator>
-
+#include "../lib/aoc.h"
 
 int main (int argc, char *argv[]){
     int ans1 = 0, ans2 = 0;

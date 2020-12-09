@@ -1,5 +1,5 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 #include <string>
 
@@ -7,14 +7,11 @@
 
 #include <regex>
 
-
-int computer1(
-        std::vector<std::pair<std::string, int>> &instructions
-    ){
+int computer1(std::vector<std::pair<std::string, int>> &instructions) {
     std::vector<int> visited(instructions.size());
     int acc = 0;
     int i = 0;
-    while (true){
+    while (true) {
         if (i == instructions.size())
             return acc;
 
@@ -22,45 +19,39 @@ int computer1(
         if (visited[i] == 2)
             return acc;
 
-        if (instructions[i].first == "nop"){
+        if (instructions[i].first == "nop") {
             i++;
-        }
-        else if (instructions[i].first == "acc"){
+        } else if (instructions[i].first == "acc") {
             acc += instructions[i].second;
             i++;
-        }
-        else if (instructions[i].first == "jmp"){
+        } else if (instructions[i].first == "jmp") {
             i += instructions[i].second;
         }
     }
     return 0;
 }
 
-int computer2(
-        std::vector<std::pair<std::string, int>> &instructions,
-        std::vector<int>& visited,
-        int i
-    ){
-    while (true){
+int computer2(std::vector<std::pair<std::string, int>> &instructions,
+              std::vector<int> &visited, int i) {
+    while (true) {
         if (i == instructions.size())
             return 1;
 
         // We shouldn't reach here
-        if (i > instructions.size()){
+        if (i > instructions.size()) {
             return -1;
         }
 
         // We've probably found an inf loop, let's break
-        if (visited[i] > 0) return -1;
+        if (visited[i] > 0)
+            return -1;
         visited[i] += 1;
 
-        if (instructions[i].first == "nop"){
+        if (instructions[i].first == "nop") {
             i++;
-        }
-        else if (instructions[i].first == "acc"){
+        } else if (instructions[i].first == "acc") {
             i++;
-        }
-        else if (instructions[i].first == "jmp"){
+        } else if (instructions[i].first == "jmp") {
             i += instructions[i].second;
         }
     }
@@ -68,7 +59,7 @@ int computer2(
     return -1;
 }
 
-int main (int argc, char *argv[]){
+int main(int argc, char *argv[]) {
     int ans1 = 0, ans2 = 0;
 
     std::vector<std::pair<std::string, int>> instructions;
@@ -76,7 +67,7 @@ int main (int argc, char *argv[]){
     std::string line;
     std::regex pieces_regex("([a-z]{3}) ([+-]\\d*)");
     std::smatch pieces_match;
-    while(std::getline(myfile, line)){
+    while (std::getline(myfile, line)) {
         std::regex_search(line, pieces_match, pieces_regex);
         instructions.push_back({pieces_match[1], std::stoi(pieces_match[2])});
     }
@@ -87,19 +78,19 @@ int main (int argc, char *argv[]){
     // the correct code
     std::vector<int> visited(instructions.size());
     int i = 0;
-    while(i < instructions.size()){
+    while (i < instructions.size()) {
         ans2 == 0;
         // Try flipping the instruction
-        if (instructions[i].first == "jmp"){
-            ans2 = computer2(instructions, visited, i+1);
-        }
-        else if (instructions[i].first == "nop"){
-            ans2 = computer2(instructions, visited, i+instructions[i].second);
+        if (instructions[i].first == "jmp") {
+            ans2 = computer2(instructions, visited, i + 1);
+        } else if (instructions[i].first == "nop") {
+            ans2 = computer2(instructions, visited, i + instructions[i].second);
         }
         // Mark instruction as visited
         visited[i]++;
         // Have we found the good path?
-        if (ans2 == 1) break;
+        if (ans2 == 1)
+            break;
         // Continue as if the instruction wasn't flipped
         if (instructions[i].first == "jmp")
             i += instructions[i].second;
