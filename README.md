@@ -45,4 +45,7 @@ solution will compile without pre-compiling the headers.
 |    7    |  Handy Haversacks                             | [Blog](https://www.ashkelly.co.uk/blog/aoc20d7/)
 |    8    |  Handheld Halting                             | [Blog](https://www.ashkelly.co.uk/blog/aoc20d8/)
 |    9    |  Encoding Error                               | [Blog](https://www.ashkelly.co.uk/blog/aoc20d9/)
+|    10   |  Adapter Array                                | [Blog](https://www.ashkelly.co.uk/blog/aoc20d10/)
+|    11   |  Seating System                               | [Blog](https://www.ashkelly.co.uk/blog/aoc20d11/)
+|    12   |  Rain Risk                                    | [Blog](https://www.ashkelly.co.uk/blog/aoc20d12/)
 
