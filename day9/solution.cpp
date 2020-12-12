@@ -4,7 +4,7 @@
 int main(int argc, char *argv[]) {
     auto begin = std::chrono::high_resolution_clock::now();
     long int ans1 = 0, ans2 = 0;
-    size_t preamble_max_size = 1000;
+    size_t preamble_max_size = 25;
 
     std::fstream myfile("input", std::ios_base::in);
     std::string line;
@@ -22,7 +22,8 @@ int main(int argc, char *argv[]) {
             it = preamble.begin();
             while (it != preamble.end()) {
                 cached_it = cached.find(num - *it);
-                if (cached_it != cached.end()) found = true;
+                if (cached_it != cached.end())
+                    found = true;
                 it = std::next(it);
             }
 
@@ -37,10 +38,10 @@ int main(int argc, char *argv[]) {
 
             // remove value from cache
             cached_it = cached.find(rem);
-            if (cached_it != cached.end()){
+            if (cached_it != cached.end()) {
                 if ((*cached_it).second == 1)
                     cached.erase(cached_it);
-                else{
+                else {
                     (*cached_it).second--;
                 }
             }
@@ -88,8 +89,11 @@ int main(int argc, char *argv[]) {
     std::cout << "Answer 1: " << ans1 << std::endl;
     std::cout << "Answer 2: " << ans2 << std::endl;
     auto end = std::chrono::high_resolution_clock::now();
-    double runtime = (double) std::chrono::duration_cast<std::chrono::microseconds>(end-begin).count();
-    std::cout << runtime/1.e3 << " milli seconds" << std::endl;
+    double runtime =
+        (double)std::chrono::duration_cast<std::chrono::microseconds>(end -
+                                                                      begin)
+            .count();
+    std::cout << runtime / 1.e3 << " milli seconds" << std::endl;
 
     return 0;
 }
