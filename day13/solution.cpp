@@ -48,6 +48,7 @@ int main (int argc, char *argv[]){
     // Sort so we start with the largest ID, which means start with largest
     // increment and thus iterate to solution faster
     std::sort(bus_ids.begin(), bus_ids.end());
+    std::reverse(bus_ids.begin(), bus_ids.end());
 
     // Pick a starting value which we know works
     long int t = bus_ids[0].first - bus_ids[0].second;

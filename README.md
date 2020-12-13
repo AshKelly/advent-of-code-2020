@@ -48,4 +48,5 @@ solution will compile without pre-compiling the headers.
 |    10   |  Adapter Array                                | [Blog](https://www.ashkelly.co.uk/blog/aoc20d10/)
 |    11   |  Seating System                               | [Blog](https://www.ashkelly.co.uk/blog/aoc20d11/)
 |    12   |  Rain Risk                                    | [Blog](https://www.ashkelly.co.uk/blog/aoc20d12/)
+|    13   |  Shuttle Search                               | [Blog](https://www.ashkelly.co.uk/blog/aoc20d13/)
 
