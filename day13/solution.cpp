@@ -1,6 +1,5 @@
 #include "../lib/aoc.h"
 #include <numeric>
-#include <regex>
 
 int main(int argc, char *argv[]) {
     long int ans1 = 0, ans2 = 0;

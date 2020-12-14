@@ -17,12 +17,12 @@ default:
 solution: solution.cpp
 	$(CC) $(CPP_FLAGS) $(DEBUG_FLAGS) solution.cpp -o solution
 
-solution_fast: solution.cpp
-	$(CC) $(CPP_FLAGS) $(OPT_FLAGS) solution.cpp -o solution_fast
+solution_opt: solution.cpp
+	$(CC) $(CPP_FLAGS) $(OPT_FLAGS) solution.cpp -o solution_opt
 
 clean:
-	@echo " Cleaning..."; rm solution solution_fast 2> /dev/null || true
+	@echo " Cleaning..."; rm solution solution_opt 2> /dev/null || true
 
-all: solution_fast solution
+all: solution_opt solution
 
 .PHONY: clean

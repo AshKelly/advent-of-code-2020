@@ -1,16 +1,4 @@
-#include <fstream>
-#include <iostream>
-
-#include <sstream>
-#include <string>
-
-#include <list>
-#include <map>
-#include <set>
-#include <vector>
-
-#include <algorithm>
-#include <iterator>
+#include "../lib/aoc.h"
 
 std::pair<int, int> find_seat(std::string boarding_pass) {
     int row = 0, col = 0;

@@ -1,8 +1,5 @@
-#include <fstream>
-#include <iostream>
-
+#include "../lib/aoc.h"
 #include <array>
-#include <string>
 
 int main(int argc, char *argv[]) {
     int ans1 = 0, ans2 = 0;

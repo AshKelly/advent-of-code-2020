@@ -1,12 +1,4 @@
-#include <fstream>
-#include <iostream>
-
-#include <string>
-
-#include <map>
-
-#include <iterator>
-#include <regex>
+#include "../lib/aoc.h"
 
 bool valididate_byr(std::map<std::string, std::string> &documents) {
     int val = std::stoi(documents["byr"]);

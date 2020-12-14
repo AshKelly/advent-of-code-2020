@@ -1,4 +1,4 @@
-DEBUG_FLAGS = -O0 -Werror -Wall -Wextra -pedantic -Wcast-align -Wcast-qual \
+DEBUG_FLAGS = -O0 -Wall -Wextra -pedantic -Wcast-align -Wcast-qual \
 			  -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 \
 			  -Winit-self -Wlogical-op -Wmissing-include-dirs -Wnoexcept \
 			  -Wold-style-cast -Woverloaded-virtual -Wredundant-decls \
@@ -8,24 +8,21 @@ DEBUG_FLAGS = -O0 -Werror -Wall -Wextra -pedantic -Wcast-align -Wcast-qual \
 
 OPT_FLAGS = -O3
 CC = g++
-CPP_FLAGS = -std=c++14
-
-.DEFAULT_GOAL := all
-
-# other targets ...
+CPP_FLAGS = -std=c++11
+.DEFAULT_GOAL := solution
 
 default:
-	@echo default all
+	@echo default solution
 
 solution: solution.cpp
 	$(CC) $(CPP_FLAGS) $(DEBUG_FLAGS) solution.cpp -o solution
 
-solution_fast: solution.cpp
-	$(CC) $(CPP_FLAGS) $(OPT_FLAGS) solution.cpp -o solution_fast
+solution_opt: solution.cpp
+	$(CC) $(CPP_FLAGS) $(OPT_FLAGS) solution.cpp -o solution_opt
 
 clean:
-	@echo " Cleaning..."; rm solution solution_fast 2> /dev/null || true
+	@echo " Cleaning..."; rm solution solution_opt 2> /dev/null || true
 
-all: solution_fast solution
+all: solution_opt solution
 
 .PHONY: clean

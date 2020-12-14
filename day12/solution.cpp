@@ -1,5 +1,4 @@
 #include "../lib/aoc.h"
-
 #include <cmath>
 
 std::pair<int, int> rotate(std::pair<int, int> wp, int deg) {
