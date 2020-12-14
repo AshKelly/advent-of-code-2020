@@ -1,8 +1,8 @@
 #include "../lib/aoc.h"
-#include <regex>
 #include <numeric>
+#include <regex>
 
-int main (int argc, char *argv[]){
+int main(int argc, char *argv[]) {
     long int ans1 = 0, ans2 = 0;
 
     std::fstream myfile("input", std::ios_base::in);
@@ -21,19 +21,19 @@ int main (int argc, char *argv[]){
     const std::regex reg("([0-9x]+)+");
     std::sregex_token_iterator it = {line2.begin(), line2.end(), reg, 1};
     while (it != std::sregex_token_iterator()) {
-        if (*it != 'x'){
+        if (*it != 'x') {
             int val = std::stoi(*it);
 
-            if (val > 0){
+            if (val > 0) {
                 int n = mytime / val;
                 int rem = mytime % val;
 
                 // If the value is less than the time, then we must do val-rem
                 // to find out how long after the bus leaves
-                if (n*val < mytime)
+                if (n * val < mytime)
                     rem = val - rem;
 
-                if (rem < best_bus.second){
+                if (rem < best_bus.second) {
                     best_bus.first = val;
                     best_bus.second = rem;
                 }
@@ -58,7 +58,7 @@ int main (int argc, char *argv[]){
     // we set the step to lowest common multiple of the current step and the id
     // which means every future increment will also be a solution for this id
     // and all previously solved ids.
-    for (auto v : bus_ids){
+    for (auto v : bus_ids) {
         while ((t + v.second) % v.first != 0)
             t += step;
 

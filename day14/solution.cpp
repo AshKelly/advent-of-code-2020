@@ -1,7 +1,6 @@
 #include "../lib/aoc.h"
 
-
-int main (int argc, char *argv[]){
+int main(int argc, char *argv[]) {
     long unsigned int ans1 = 0, ans2 = 0;
 
     std::fstream myfile("input", std::ios_base::in);
@@ -18,8 +17,8 @@ int main (int argc, char *argv[]){
     unsigned long int either_mask = 0;
     unsigned long int one = 1;
     std::vector<long unsigned int> addresses;
-    while(std::getline(myfile, line)){
-        if (line[1] == 'a'){
+    while (std::getline(myfile, line)) {
+        if (line[1] == 'a') {
             // Reload the mask
             std::regex_search(line, pieces_match, reg1);
             std::string mask = pieces_match[1];
@@ -28,7 +27,7 @@ int main (int argc, char *argv[]){
             or_mask = 0;
             either_mask = 0;
             and_mask = ~or_mask;
-            for(size_t i=0; i<mask.size(); i++){
+            for (size_t i = 0; i < mask.size(); i++) {
                 if (mask[mask.size() - 1 - i] == '1')
                     or_mask += (one << i);
                 else if (mask[mask.size() - 1 - i] == '0')
@@ -37,8 +36,7 @@ int main (int argc, char *argv[]){
                     either_mask += (one << i);
             }
 
-        }
-        else{
+        } else {
             std::regex_search(line, pieces_match, reg2);
             unsigned long int num1 = std::stoull(pieces_match[1]);
             unsigned long int num2 = std::stoull(pieces_match[2]);
@@ -48,29 +46,29 @@ int main (int argc, char *argv[]){
 
             // Generate all possible memory addresses
             addresses.clear();
-            addresses.push_back( ((num1 | or_mask) & (~either_mask)) );
-            for(unsigned long int i=0; i<36; i++){
-                if (((either_mask >> i) & one) > 0){
+            addresses.push_back(((num1 | or_mask) & (~either_mask)));
+            for (unsigned long int i = 0; i < 36; i++) {
+                if (((either_mask >> i) & one) > 0) {
                     size_t maxj = addresses.size();
-                    for(size_t j=0; j<maxj; j++){
-                        addresses.push_back( addresses[j] + (one << i) );
+                    for (size_t j = 0; j < maxj; j++) {
+                        addresses.push_back(addresses[j] + (one << i));
                     }
                 }
             }
 
             // Put value into possible addresses
-            for(auto v : addresses)
+            for (auto v : addresses)
                 memory_ans2[v] = num2;
         }
     }
     myfile.close();
 
     ans1 = 0;
-    for(auto kv : memory_ans1)
+    for (auto kv : memory_ans1)
         ans1 += kv.second;
 
     ans2 = 0;
-    for(auto kv : memory_ans2)
+    for (auto kv : memory_ans2)
         ans2 += kv.second;
 
     std::cout << "Answer 1: " << ans1 << std::endl;
