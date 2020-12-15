@@ -16,7 +16,6 @@ int main(int argc, char *argv[]) {
     unsigned long int and_mask = ~or_mask;
     unsigned long int either_mask = 0;
     unsigned long int one = 1;
-    std::vector<long unsigned int> addresses;
     while (std::getline(myfile, line)) {
         if (line[1] == 'a') {
             // Reload the mask
@@ -45,7 +44,7 @@ int main(int argc, char *argv[]) {
             memory_ans1[num1] = ((num2 & and_mask) | or_mask);
 
             // Generate all possible memory addresses
-            addresses.clear();
+            std::vector<long unsigned int> addresses;
             addresses.push_back(((num1 | or_mask) & (~either_mask)));
             for (unsigned long int i = 0; i < 36; i++) {
                 if (((either_mask >> i) & one) > 0) {
