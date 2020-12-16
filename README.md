@@ -49,4 +49,7 @@ solution will compile without pre-compiling the headers.
 |    11   |  Seating System                               | [Blog](https://www.ashkelly.co.uk/blog/aoc20d11/)
 |    12   |  Rain Risk                                    | [Blog](https://www.ashkelly.co.uk/blog/aoc20d12/)
 |    13   |  Shuttle Search                               | [Blog](https://www.ashkelly.co.uk/blog/aoc20d13/)
+|    14   |  Docking Data                                 | [Blog](https://www.ashkelly.co.uk/blog/aoc20d14/)
+|    15   |  Rambunctious Recitation                      | [Blog](https://www.ashkelly.co.uk/blog/aoc20d15/)
+|    16   |  Ticket Translation                           | [Blog](https://www.ashkelly.co.uk/blog/aoc20d16/)
 
