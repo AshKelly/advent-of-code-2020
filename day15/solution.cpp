@@ -3,7 +3,7 @@
 int main(int argc, char *argv[]) {
     int ans1 = 0, ans2 = 0;
 
-    std::vector<int> starting = {0, 8, 15, 2, 12, 1, 4};
+    std::vector<int> starting = {0, 1}; // 8, 15, 2, 12, 1, 4};
     int max_starting = int(starting.size());
 
     std::unordered_map<int, int> history;
@@ -11,7 +11,8 @@ int main(int argc, char *argv[]) {
 
     int index = 0;
     int num = starting[0];
-    while (index < 30000000 - 1) {
+    while (index < 8) {
+        std::cout << num << std::endl;
         it = history.find(num);
         if (it == history.end()) {
             history.insert({num, index});
