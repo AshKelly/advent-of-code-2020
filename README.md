@@ -52,4 +52,5 @@ solution will compile without pre-compiling the headers.
 |    14   |  Docking Data                                 | [Blog](https://www.ashkelly.co.uk/blog/aoc20d14/)
 |    15   |  Rambunctious Recitation                      | [Blog](https://www.ashkelly.co.uk/blog/aoc20d15/)
 |    16   |  Ticket Translation                           | [Blog](https://www.ashkelly.co.uk/blog/aoc20d16/)
+|    17   |  Conway Cubes                                 | [Blog](https://www.ashkelly.co.uk/blog/aoc20d17/)
 
