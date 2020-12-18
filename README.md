@@ -53,4 +53,6 @@ solution will compile without pre-compiling the headers.
 |    15   |  Rambunctious Recitation                      | [Blog](https://www.ashkelly.co.uk/blog/aoc20d15/)
 |    16   |  Ticket Translation                           | [Blog](https://www.ashkelly.co.uk/blog/aoc20d16/)
 |    17   |  Conway Cubes                                 | [Blog](https://www.ashkelly.co.uk/blog/aoc20d17/)
+|    18   |  Operation Order                              | [Blog](https://www.ashkelly.co.uk/blog/aoc20d18/)
+
 
