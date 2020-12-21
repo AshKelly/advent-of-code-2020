@@ -73,20 +73,23 @@ int main(int argc, char *argv[]) {
         std::unordered_map<long int, char> new_world;
         int new_active = 0;
 
-        for(auto cube : world){
+        for (auto cube : world) {
             get_xyzw(cube.first, x, y, z, w);
 
             for (int xi = x - 1; xi <= x + 1; xi++)
                 for (int yi = y - 1; yi <= y + 1; yi++)
-                    for (int zi = z - 1; zi <= z + 1; zi++){
+                    for (int zi = z - 1; zi <= z + 1; zi++) {
                         long int key = key_xyzw(xi, yi, zi, 0);
                         it = new_world.find(key);
-                        if (it != new_world.end()) continue;
+                        if (it != new_world.end())
+                            continue;
 
-                        int active = count_active_neighbours(world, xi, yi, zi, 0);
+                        int active =
+                            count_active_neighbours(world, xi, yi, zi, 0);
 
                         it = world.find(key);
-                        if ((it != world.end()) && ((active == 3) || (active == 2)) ||
+                        if ((it != world.end()) &&
+                                ((active == 3) || (active == 2)) ||
                             ((it == world.end()) && (active == 3))) {
                             new_world[key] = 1;
                             new_active++;
@@ -103,21 +106,24 @@ int main(int argc, char *argv[]) {
         std::unordered_map<long int, char> new_world;
         int new_active = 0;
 
-        for(auto cube : world){
+        for (auto cube : world) {
             get_xyzw(cube.first, x, y, z, w);
 
             for (int xi = x - 1; xi <= x + 1; xi++)
                 for (int yi = y - 1; yi <= y + 1; yi++)
                     for (int zi = z - 1; zi <= z + 1; zi++)
-                        for (int wi = w - 1; wi <= w + 1; wi++){
+                        for (int wi = w - 1; wi <= w + 1; wi++) {
                             long int key = key_xyzw(xi, yi, zi, wi);
                             it = new_world.find(key);
-                            if (it != new_world.end()) continue;
+                            if (it != new_world.end())
+                                continue;
 
-                            int active = count_active_neighbours(world, xi, yi, zi, wi);
+                            int active =
+                                count_active_neighbours(world, xi, yi, zi, wi);
 
                             it = world.find(key);
-                            if ((it != world.end()) && ((active == 3) || (active == 2)) ||
+                            if ((it != world.end()) &&
+                                    ((active == 3) || (active == 2)) ||
                                 ((it == world.end()) && (active == 3))) {
                                 new_world[key] = 1;
                                 new_active++;
