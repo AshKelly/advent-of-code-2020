@@ -54,5 +54,7 @@ solution will compile without pre-compiling the headers.
 |    16   |  Ticket Translation                           | [Blog](https://www.ashkelly.co.uk/blog/aoc20d16/)
 |    17   |  Conway Cubes                                 | [Blog](https://www.ashkelly.co.uk/blog/aoc20d17/)
 |    18   |  Operation Order                              | [Blog](https://www.ashkelly.co.uk/blog/aoc20d18/)
-
+|    19   |  Monster Messages                             | [Blog](https://www.ashkelly.co.uk/blog/aoc20d19/)
+|    20   |  Jurassic Jigsaw                              | [Blog](https://www.ashkelly.co.uk/blog/aoc20d20/)
+|    21   |  Allergen Assessment                          | [Blog](https://www.ashkelly.co.uk/blog/aoc20d21/)
 
