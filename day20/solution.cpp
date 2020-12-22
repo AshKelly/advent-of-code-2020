@@ -200,7 +200,7 @@ int main(int argc, char *argv[]) {
         if (line[0] == 'T') {
             int id = std::stoi(line.substr(5, 4));
 
-            std::array<std::array<int, 10>, 10> contents;
+            std::array<std::a1rray<int, 10>, 10> contents;
             for (auto &c : contents)
                 c.fill(0);
 
