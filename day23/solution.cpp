@@ -11,13 +11,26 @@ class Cup {
         };
 };
 
-std::vector<Cup> solve(std::vector<Cup> cups, int padding, int reps){
-    for(int i=10; i<=padding; i++)
+//std::vector<int> order = {1, 9, 3, 4, 6, 7, 2, 5, 8};
+std::vector<Cup> solve(std::vector<int> order, int padding, int reps){
+    std::vector<Cup> cups;
+    for(int i=1; i<padding; i++)
         cups.push_back(Cup(i));
 
-    for(size_t i=0; i<cups.size()-1; i++)
-        cups[i].set_next(&cups[i+1]);
-    cups[cups.size()-1].set_next(&cups[0]);
+    Cup * temp;
+    for(int i=0; i<order.size()-1; i++){
+        temp = &cups[order[i]-1];
+        temp->set_next(&cups[order[i+1]-1]);
+    }
+    cups[order[order.size()-1]-1].set_next(&cups[order[0]-1]);
+       
+    if (padding > 10){ 
+        int last = order[order.size()-1]-1;
+        cups[last].set_next(&cups[order.size()]);
+        for(size_t i=order.size(); i<cups.size()-1; i++)
+            cups[i].set_next(&cups[i+1]);
+        cups[cups.size()-1].set_next(&cups[order[0]-1]);
+    }
 
     Cup * curr = &cups[0];
     Cup * start, * end, * destination;
@@ -54,19 +67,8 @@ std::vector<Cup> solve(std::vector<Cup> cups, int padding, int reps){
             }
         }
 
-        // The first few cups aren't in order, so I must search for the cups
-        // however, after cup 10, every cup is in order!
-        if (target >= 10){
-            destination = &cups[target-1];
-        }
-        else{
-            for(auto &cup : cups){
-                if (cup.value == target){
-                    destination = &cup;
-                    break;
-                }
-            }
-        }
+        // Every cup is in order!
+        destination = &cups[target-1];
 
         // Remove the elements
         curr->next = end->next;
@@ -87,9 +89,9 @@ std::vector<Cup> solve(std::vector<Cup> cups, int padding, int reps){
 int main (int argc, char *argv[]){
     long int ans1 = 0, ans2 = 1;
 
-    std::vector<Cup> cups = {1, 9, 3, 4, 6, 7, 2, 5, 8};
-    std::vector<Cup> cups1 = solve(cups, 0, 100);
-    std::vector<Cup> cups2 = solve(cups, 1000000, 10000000);
+    std::vector<int> order = {1, 9, 3, 4, 6, 7, 2, 5, 8};
+    std::vector<Cup> cups1 = solve(order, 10, 100);
+    std::vector<Cup> cups2 = solve(order, 1000001, 10000000);
 
     /* Find cup 1 */
     Cup * start;
