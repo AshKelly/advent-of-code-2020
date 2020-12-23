@@ -58,4 +58,5 @@ solution will compile without pre-compiling the headers.
 |    20   |  Jurassic Jigsaw                              | [Blog](https://www.ashkelly.co.uk/blog/aoc20d20/)
 |    21   |  Allergen Assessment                          | [Blog](https://www.ashkelly.co.uk/blog/aoc20d21/)
 |    22   |  Crab Combat                                  | [Blog](https://www.ashkelly.co.uk/blog/aoc20d22/)
+|    23   |  Crab Cups                                  | [Blog](https://www.ashkelly.co.uk/blog/aoc20d23/)
 
