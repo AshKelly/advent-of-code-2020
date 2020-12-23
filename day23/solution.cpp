@@ -11,20 +11,21 @@ class Cup {
         };
 };
 
-//std::vector<int> order = {1, 9, 3, 4, 6, 7, 2, 5, 8};
-std::vector<Cup> solve(std::vector<int> order, int padding, int reps){
+std::vector<Cup> solve(std::vector<int> order, int num_cups, int reps){
     std::vector<Cup> cups;
-    for(int i=1; i<padding; i++)
+    for(int i=1; i<num_cups; i++)
         cups.push_back(Cup(i));
 
+    // Set up pointers to match initial order
     Cup * temp;
     for(int i=0; i<order.size()-1; i++){
         temp = &cups[order[i]-1];
         temp->set_next(&cups[order[i+1]-1]);
     }
     cups[order[order.size()-1]-1].set_next(&cups[order[0]-1]);
-       
-    if (padding > 10){ 
+
+    // Add pointers between extra values
+    if (num_cups > order.size()+1){ 
         int last = order[order.size()-1]-1;
         cups[last].set_next(&cups[order.size()]);
         for(size_t i=order.size(); i<cups.size()-1; i++)
