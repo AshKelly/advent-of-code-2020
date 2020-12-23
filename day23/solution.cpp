@@ -25,7 +25,7 @@ std::vector<Cup> solve(std::vector<int> order, int num_cups, int reps){
     cups[order[order.size()-1]-1].set_next(&cups[order[0]-1]);
 
     // Add pointers between extra values
-    if (num_cups > order.size()+1){ 
+    if (num_cups > order.size()+1){
         int last = order[order.size()-1]-1;
         cups[last].set_next(&cups[order.size()]);
         for(size_t i=order.size(); i<cups.size()-1; i++)
@@ -50,7 +50,6 @@ std::vector<Cup> solve(std::vector<int> order, int num_cups, int reps){
 
         // Find destination cup by ensuring our target is not in the pickup
         bool found = false;
-        Cup * temp;
         while (!found){
             temp = start;
             found = true;
@@ -94,15 +93,8 @@ int main (int argc, char *argv[]){
     std::vector<Cup> cups1 = solve(order, 10, 100);
     std::vector<Cup> cups2 = solve(order, 1000001, 10000000);
 
-    /* Find cup 1 */
-    Cup * start;
-    for(auto &cup : cups1){
-        if (cup.value == 1){
-            start = &cup;
-            break;
-        }
-    }
     /* Print all the numbers after cup 1 */
+    Cup * start = &cups1[0];
     std::cout << "Answer 1: ";
     start = start->next;
     for(int j=0; j<8; j++){
@@ -111,15 +103,8 @@ int main (int argc, char *argv[]){
     }
     std::cout << std::endl;
 
-
-    /* Find cup 1 */
-    for(auto &cup : cups2){
-        if (cup.value == 1){
-            start = &cup;
-            break;
-        }
-    }
     /* Multiply two numbers afterwards */
+    start = &cups2[0];
     for(int j=0; j<3; j++){
         ans2 *= start->value;
         start = start->next;
